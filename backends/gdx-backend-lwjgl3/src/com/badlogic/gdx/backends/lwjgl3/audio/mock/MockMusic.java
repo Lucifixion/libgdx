@@ -62,6 +62,16 @@ public class MockMusic implements Music {
 	}
 
 	@Override
+	public void setPitch (float pitch) {
+
+	}
+
+	@Override
+	public float getPitch () {
+		return 0;
+	}
+
+	@Override
 	public void setPan (float pan, float volume) {
 
 	}

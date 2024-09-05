@@ -46,6 +46,7 @@ public abstract class OpenALMusic implements Music {
 	private int format, sampleRate;
 	private boolean isLooping, isPlaying;
 	private float volume = 1;
+	private float pitch = 1;
 	private float pan = 0;
 	private float renderedSeconds, maxSecondsPerBuffer;
 
@@ -88,6 +89,7 @@ public abstract class OpenALMusic implements Music {
 			}
 			alSourcei(sourceID, AL_LOOPING, AL_FALSE);
 			setPan(pan, volume);
+			setPitch(pitch);
 
 			alGetError();
 
@@ -153,6 +155,19 @@ public abstract class OpenALMusic implements Music {
 
 	public float getVolume () {
 		return this.volume;
+	}
+
+	@Override
+	public void setPitch (float pitch) {
+		if (pitch < 0) throw new IllegalArgumentException("pitch cannot be < 0: " + pitch);
+		this.pitch = pitch;
+		if (audio.noDevice) return;
+		if (sourceID != -1) alSourcef(sourceID, AL_PITCH, pitch);
+	}
+
+	@Override
+	public float getPitch () {
+		return this.pitch;
 	}
 
 	public void setPan (float pan, float volume) {

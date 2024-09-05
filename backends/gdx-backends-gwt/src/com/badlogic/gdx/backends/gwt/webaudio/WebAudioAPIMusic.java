@@ -99,6 +99,16 @@ public class WebAudioAPIMusic implements Music {
 		return audioControlGraph.getVolume();
 	}
 
+	@Override // TODO
+	public void setPitch (float pitch) {
+
+	}
+
+	@Override // TODO
+	public float getPitch () {
+		return 0;
+	}
+
 	@Override
 	public void setPan (float pan, float volume) {
 		audioControlGraph.setPan(pan);

@@ -74,6 +74,14 @@ public interface Music extends Disposable {
 	/** @return the volume of this music stream. */
 	public float getVolume ();
 
+	/** Sets the pitch of this music stream.
+	 *
+	 * @param pitch */
+	public void setPitch (float pitch);
+
+	/** @return the pitch of this music stream. */
+	public float getPitch ();
+
 	/** Sets the panning and volume of this music stream.
 	 * @param pan panning in the range -1 (full left) to 1 (full right). 0 is center position.
 	 * @param volume the volume in the range [0,1]. */

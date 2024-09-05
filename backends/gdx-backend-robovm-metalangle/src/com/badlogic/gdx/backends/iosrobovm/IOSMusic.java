@@ -98,6 +98,16 @@ public class IOSMusic implements Music {
 		track.setVolume(volume);
 	}
 
+	@Override // TODO
+	public void setPitch (float pitch) {
+
+	}
+
+	@Override // TODO
+	public float getPitch () {
+		return 0;
+	}
+
 	@Override
 	public void setPosition (float position) {
 		track.setCurrentTime(position);
